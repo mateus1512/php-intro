@@ -20,7 +20,7 @@ function defineCategoriaCompetidor(string $nome, string $idade) {
                     return;
                 }
             }
-        } else if ($idade > 18 && $idade <= 30) {
+        } else if ($idade > 18) {
             for ($i = 0; $i <= count($categorias); $i++) {
                 if ($categorias[$i] == 'adulto') {
                     setarMensagemSucesso('o nadador ' . $nome . ' compete na categoria ' . $categorias[$i]);
@@ -28,10 +28,11 @@ function defineCategoriaCompetidor(string $nome, string $idade) {
                 }
             }
         } else {
-            removerMensagemSucesso();
+
             return obterMensagemErro();
         }
     }
-   
 }
- removerMensagemErro();
+
+removerMensagemErro();
+removerMensagemSucesso();
